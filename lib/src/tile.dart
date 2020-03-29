@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 /// Default trigger widget
 class SmartSelectTile extends StatelessWidget {
-
   /// The value of the selected option.
   final String value;
 
@@ -92,7 +92,7 @@ class SmartSelectTile extends StatelessWidget {
       selected: selected,
       contentPadding: padding,
       leading: leading,
-      title: Text(title),
+      title: TextResponsive(title),
       subtitle: isTwoLine ? _valueWidget : null,
       trailing: _trailingWidget,
       onTap: onTap,
@@ -135,7 +135,7 @@ class SmartSelectTile extends StatelessWidget {
   }
 
   Widget get _valueWidget {
-    return Text(
+    return TextResponsive(
       isLoading ? loadingText : value,
       style: TextStyle(color: Colors.grey),
       overflow: TextOverflow.ellipsis,

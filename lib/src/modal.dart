@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart' show Scaffold;
 import './model/modal_config.dart';
 import './modal_header.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class SmartSelectModal extends StatelessWidget {
-
   final String title;
   final SmartSelectModalType type;
   final SmartSelectModalConfig config;
@@ -21,10 +21,12 @@ class SmartSelectModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (type == SmartSelectModalType.fullPage) {
-      return Scaffold(
-        backgroundColor: config.style.backgroundColor,
-        appBar: _routeHeader,
-        body: _routeBody,
+      return ResponsiveWidgets.builder(
+        child: Scaffold(
+          backgroundColor: config.style.backgroundColor,
+          appBar: _routeHeader,
+          body: _routeBody,
+        ),
       );
     } else {
       return _routeBody;
@@ -37,12 +39,12 @@ class SmartSelectModal extends StatelessWidget {
 
   Widget get _routeHeader {
     return config.useHeader
-      ? SmartSelectModalHeader(
-          title: config?.title ?? title,
-          type: type,
-          config: config,
-        )
-      : null;
+        ? SmartSelectModalHeader(
+            title: config?.title ?? title,
+            type: type,
+            config: config,
+          )
+        : null;
   }
 
   Widget get _routeBody {

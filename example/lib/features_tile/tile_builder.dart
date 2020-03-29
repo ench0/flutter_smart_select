@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesTileBuilder extends StatefulWidget {
   @override
@@ -8,8 +9,14 @@ class FeaturesTileBuilder extends StatefulWidget {
 }
 
 class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
-
-  List<String> _cars = ['bmw-x2', 'bmw-x1', 'honda-hrv', 'honda-jazz', 'hyundai-i10', 'bmw-sgt'];
+  List<String> _cars = [
+    'bmw-x2',
+    'bmw-x1',
+    'honda-hrv',
+    'honda-jazz',
+    'hyundai-i10',
+    'bmw-sgt'
+  ];
   List<String> _categories = [];
   String _sort = 'popular';
 
@@ -101,7 +108,6 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
 }
 
 class ChipsTile<T> extends StatelessWidget {
-
   final String title;
   final SmartSelectState<T> state;
   final SmartSelectShowModal showChoices;
@@ -127,7 +133,7 @@ class ChipsTile<T> extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           ListTile(
-            title: Text('Cars'),
+            title: TextResponsive('Cars'),
             trailing: IconButton(
               icon: Icon(Icons.add_circle_outline),
               onPressed: () => showChoices(context),
@@ -142,38 +148,38 @@ class ChipsTile<T> extends StatelessWidget {
 
   Widget get _chips {
     return state.valuesObject?.isNotEmpty ?? false
-      ? Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 5,
-          ),
-          child: Wrap(
-            runAlignment: WrapAlignment.start,
-            alignment: WrapAlignment.start,
-            spacing: 5,
-            runSpacing: 0,
-            children: List<Widget>.generate(
-              state.valuesObject.length,
-              (i) => Chip(
-                label: Text(state.valuesObject[i].title),
-                backgroundColor: Colors.white,
-                shape: StadiumBorder(
-                  side: BorderSide(
-                    color: Colors.black12,
+        ? Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 5,
+            ),
+            child: Wrap(
+              runAlignment: WrapAlignment.start,
+              alignment: WrapAlignment.start,
+              spacing: 5,
+              runSpacing: 0,
+              children: List<Widget>.generate(
+                state.valuesObject.length,
+                (i) => Chip(
+                  label: TextResponsive(state.valuesObject[i].title),
+                  backgroundColor: Colors.white,
+                  shape: StadiumBorder(
+                    side: BorderSide(
+                      color: Colors.black12,
+                    ),
                   ),
+                  onDeleted: () {
+                    onChipsDeleted?.call(state.valuesObject[i].value);
+                  },
                 ),
-                onDeleted: () {
-                  onChipsDeleted?.call(state.valuesObject[i].value);
-                },
-              ),
-            ).toList(),
-          ),
-        )
-      : Container(
-          padding: EdgeInsets.all(25),
-          child: Center(
-            child: Text(state.placeholder),
-          ),
-        );
+              ).toList(),
+            ),
+          )
+        : Container(
+            padding: EdgeInsets.all(25),
+            child: Center(
+              child: TextResponsive(state.placeholder),
+            ),
+          );
   }
 }

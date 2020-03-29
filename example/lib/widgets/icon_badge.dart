@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class IconBadge extends StatelessWidget {
-
   final Icon icon;
   final int counter;
   final Color color;
@@ -34,7 +34,7 @@ class IconBadge extends StatelessWidget {
                 minWidth: 14,
                 minHeight: 14,
               ),
-              child: Text(
+              child: TextResponsive(
                 counter.toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

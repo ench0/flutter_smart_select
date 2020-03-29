@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CardTile extends StatelessWidget {
-
   final String title;
   final String value;
   final Image thumb;
@@ -38,14 +38,20 @@ class CardTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
+                    TextResponsive(
                       title,
-                      style: Theme.of(context).textTheme.title.merge(TextStyle(color: Colors.black54)),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline1
+                          .merge(TextStyle(color: Colors.black54)),
                     ),
                     Container(height: 5),
-                    Text(
+                    TextResponsive(
                       value,
-                      style: Theme.of(context).textTheme.subtitle.merge(TextStyle(color: Colors.black38)),
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle1
+                          .merge(TextStyle(color: Colors.black38)),
                     ),
                   ],
                 ),

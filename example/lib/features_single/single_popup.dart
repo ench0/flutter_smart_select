@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesSinglePopup extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesSinglePopup extends StatefulWidget {
 }
 
 class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
-
   String _fruit = 'mel';
   String _framework = 'flu';
 
@@ -33,8 +33,8 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
           modalType: SmartSelectModalType.popupDialog,
           builder: (context, state, showOption) {
             return ListTile(
-              title: Text(state.title),
-              subtitle: Text(
+              title: TextResponsive(state.title),
+              subtitle: TextResponsive(
                 state.valueDisplay,
                 style: TextStyle(color: Colors.grey),
                 overflow: TextOverflow.ellipsis,
@@ -42,10 +42,8 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
               ),
               leading: CircleAvatar(
                 backgroundColor: Colors.blue,
-                child: Text(
-                  '${state.valueDisplay[0]}',
-                  style: TextStyle(color: Colors.white)
-                ),
+                child: TextResponsive('${state.valueDisplay[0]}',
+                    style: TextStyle(color: Colors.white)),
               ),
               trailing: Icon(Icons.keyboard_arrow_right, color: Colors.grey),
               onTap: () => showOption(context),

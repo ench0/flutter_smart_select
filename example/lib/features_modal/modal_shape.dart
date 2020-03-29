@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesModalShape extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesModalShape extends StatefulWidget {
 }
 
 class _FeaturesModalShapeState extends State<FeaturesModalShape> {
-
   String _framework = 'flu';
   List<String> _hero = ['bat', 'spi'];
 
@@ -27,17 +27,14 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
             style: SmartSelectModalStyle(
               elevation: 3,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20.0))
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
             ),
           ),
           choiceType: SmartSelectChoiceType.radios,
           leading: CircleAvatar(
             backgroundColor: Colors.blue,
-            child: Text(
-              '${_framework[0]}',
-              style: TextStyle(color: Colors.white)
-            ),
+            child: TextResponsive('${_framework[0]}',
+                style: TextStyle(color: Colors.white)),
           ),
           onChange: (val) => setState(() => _framework = val),
         ),
@@ -54,23 +51,22 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0),
-                  topRight: Radius.circular(15.0)
-                ),
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0)),
               ),
             ),
             headerStyle: SmartSelectModalHeaderStyle(
               centerTitle: true,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0),
-                  topRight: Radius.circular(15.0)
-                ),
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0)),
               ),
             ),
           ),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
           ),
           onChange: (val) => setState(() => _hero = val),
         ),

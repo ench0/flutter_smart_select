@@ -137,13 +137,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.8.0+1"
   petitparser:
     dependency: transitive
     description:
@@ -165,6 +158,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
+  responsive_widgets:
+    dependency: transitive
+    description:
+      name: responsive_widgets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -225,7 +225,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.11"
+    version: "0.2.15"
   typed_data:
     dependency: transitive
     description:
