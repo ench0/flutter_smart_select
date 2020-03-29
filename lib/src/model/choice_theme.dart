@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 
 /// Configure choices group header style
 class SmartSelectChoiceGroupHeaderStyle {
-
   /// Group header background color
   final Color backgroundColor;
 
@@ -26,7 +25,6 @@ class SmartSelectChoiceGroupHeaderStyle {
 
 /// Configure choices item style
 class SmartSelectChoiceStyle {
-
   /// Checkbox Checked icon color
   final Color checkColor;
 

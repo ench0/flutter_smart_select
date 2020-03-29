@@ -29,7 +29,7 @@ class SmartSelectModalHeader extends StatelessWidget
 
     // define text style
     TextStyle textStyle =
-        Theme.of(context).textTheme.headline1.merge(theme.textStyle);
+        Theme.of(context).textTheme.headline2.merge(theme.textStyle);
 
     // build title widget
     Widget titleWidget = TextResponsive(modalTitle, style: textStyle);
@@ -40,7 +40,7 @@ class SmartSelectModalHeader extends StatelessWidget
       style: textStyle,
       autofocus: true,
       decoration: InputDecoration.collapsed(
-        hintText: config.searchBarHint ?? 'Search on $title',
+        hintText: config.searchBarHint ?? 'Search $title',
         hintStyle: textStyle,
       ),
       onSubmitted: filter.setQuery,
