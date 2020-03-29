@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesOptionDisabled extends StatefulWidget {
   @override
@@ -7,26 +8,32 @@ class FeaturesOptionDisabled extends StatefulWidget {
 }
 
 class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
-
   List<int> _categories = [];
 
   int _sort = 0;
 
   List<String> _categoriesOption = [
-    'Electronics', 'Accessories', 'Smartwatch',
-    'Smartphone', 'Audio & Video', 'Scientific'
+    'Electronics',
+    'Accessories',
+    'Smartwatch',
+    'Smartphone',
+    'Audio & Video',
+    'Scientific'
   ];
 
   List<String> _sortOption = [
-    'Popular', 'Most Reviews', 'Newest',
-    'Low Price', 'High Price',
+    'Popular',
+    'Most Reviews',
+    'Newest',
+    'Low Price',
+    'High Price',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         Card(
           elevation: 3,
           margin: EdgeInsets.all(10),
@@ -55,7 +62,7 @@ class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
                   onChange: (val) => setState(() => _categories = val),
                 ),
               ),
-              Container(
+              ContainerResponsive(
                 height: 40,
                 child: VerticalDivider(),
               ),
@@ -69,7 +76,8 @@ class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
                     source: _sortOption,
                     value: (index, item) => index,
                     title: (index, item) => item,
-                    disabled: (index, item) => item.toLowerCase().contains('price'),
+                    disabled: (index, item) =>
+                        item.toLowerCase().contains('price'),
                   ),
                   modalType: SmartSelectModalType.popupDialog,
                   modalConfig: SmartSelectModalConfig(
@@ -81,7 +89,7 @@ class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
             ],
           ),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

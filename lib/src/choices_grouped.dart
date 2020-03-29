@@ -59,7 +59,7 @@ class SmartSelectChoicesGroupedHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ContainerResponsive(
       height: theme.height,
       color: theme.backgroundColor,
       padding: theme.padding,

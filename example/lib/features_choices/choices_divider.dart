@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesChoicesDivider extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesChoicesDivider extends StatefulWidget {
 }
 
 class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
-
   String _car = '';
   List<String> _smartphone = [];
 
@@ -16,7 +16,7 @@ class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Car',
           placeholder: 'Choose one',
@@ -28,12 +28,11 @@ class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
             title: (index, item) => item['title'],
             group: (index, item) => item['body'],
           ),
-          choiceConfig: SmartSelectChoiceConfig(
-            isGrouped: true,
-            useDivider: true
-          ),
+          choiceConfig:
+              SmartSelectChoiceConfig(isGrouped: true, useDivider: true),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/yeVtxxPxzbw/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/yeVtxxPxzbw/100x100'),
           ),
           onChange: (val) => setState(() => _car = val),
         ),
@@ -58,11 +57,12 @@ class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
             useDivider: true,
           ),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
           ),
           onChange: (val) => setState(() => _smartphone = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

@@ -18,7 +18,7 @@ class _FeaturesModalHeaderState extends State<FeaturesModalHeader> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.multiple(
             title: 'Month',
             value: _month,
@@ -79,7 +79,7 @@ class _FeaturesModalHeaderState extends State<FeaturesModalHeader> {
           ),
           onChange: (val) => setState(() => _hero = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

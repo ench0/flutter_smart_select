@@ -16,7 +16,7 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Frameworks',
           value: _framework,
@@ -70,7 +70,7 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
           ),
           onChange: (val) => setState(() => _hero = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

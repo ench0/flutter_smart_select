@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesTileLoading extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesTileLoading extends StatefulWidget {
 }
 
 class _FeaturesTileLoadingState extends State<FeaturesTileLoading> {
-
   String _day = 'fri';
   List<String> _month = ['apr'];
 
@@ -16,7 +16,7 @@ class _FeaturesTileLoadingState extends State<FeaturesTileLoading> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Days',
           value: _day,
@@ -33,7 +33,7 @@ class _FeaturesTileLoadingState extends State<FeaturesTileLoading> {
           isLoading: true,
           isTwoLine: true,
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

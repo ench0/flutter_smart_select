@@ -16,14 +16,14 @@ class _FeaturesMultiPopupState extends State<FeaturesMultiPopup> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.multiple(
           title: 'Fruit',
           value: _fruit,
           isTwoLine: true,
           options: options.fruits,
           modalType: SmartSelectModalType.popupDialog,
-          leading: Container(
+          leading: ContainerResponsive(
             width: 40,
             alignment: Alignment.center,
             child: const Icon(Icons.shopping_cart),
@@ -56,7 +56,7 @@ class _FeaturesMultiPopupState extends State<FeaturesMultiPopup> {
           },
           onChange: (val) => setState(() => _framework = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

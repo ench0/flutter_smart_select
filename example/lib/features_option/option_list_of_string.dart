@@ -1,32 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesOptionListOfString extends StatefulWidget {
   @override
-  _FeaturesOptionListOfStringState createState() => _FeaturesOptionListOfStringState();
+  _FeaturesOptionListOfStringState createState() =>
+      _FeaturesOptionListOfStringState();
 }
 
-class _FeaturesOptionListOfStringState extends State<FeaturesOptionListOfString> {
-
+class _FeaturesOptionListOfStringState
+    extends State<FeaturesOptionListOfString> {
   List<int> _categories = [];
 
   int _sort = 3;
 
   List<String> _categoriesOption = [
-    'Electronics', 'Accessories', 'Smartwatch',
-    'Smartphone', 'Audio & Video', 'Scientific'
+    'Electronics',
+    'Accessories',
+    'Smartwatch',
+    'Smartphone',
+    'Audio & Video',
+    'Scientific'
   ];
 
   List<String> _sortOption = [
-    'Popular', 'Most Reviews', 'Newest',
-    'Low Price', 'High Price',
+    'Popular',
+    'Most Reviews',
+    'Newest',
+    'Low Price',
+    'High Price',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         Card(
           elevation: 3,
           margin: EdgeInsets.all(10),
@@ -54,7 +63,7 @@ class _FeaturesOptionListOfStringState extends State<FeaturesOptionListOfString>
                   onChange: (val) => setState(() => _categories = val),
                 ),
               ),
-              Container(
+              ContainerResponsive(
                 height: 40,
                 child: VerticalDivider(),
               ),
@@ -79,7 +88,7 @@ class _FeaturesOptionListOfStringState extends State<FeaturesOptionListOfString>
             ],
           ),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

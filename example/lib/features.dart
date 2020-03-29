@@ -73,7 +73,7 @@ class Features extends StatelessWidget {
             ),
             Flexible(
               fit: FlexFit.loose,
-              child: Container(
+              child: ContainerResponsive(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -85,7 +85,7 @@ class Features extends StatelessWidget {
                           .bodyText1
                           .merge(TextStyle(color: Colors.black54)),
                     ),
-                    Container(height: 15),
+                    ContainerResponsive(height: 15),
                   ],
                 ),
               ),

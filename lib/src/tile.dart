@@ -101,11 +101,11 @@ class SmartSelectTile extends StatelessWidget {
 
   Widget get _trailingWidget {
     return isTwoLine != true
-        ? Container(
+        ? ContainerResponsive(
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Container(
+                ContainerResponsive(
                   constraints: BoxConstraints(maxWidth: 100),
                   child: _valueWidget,
                 ),

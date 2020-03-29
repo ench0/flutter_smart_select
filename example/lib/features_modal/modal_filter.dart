@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesModalFilter extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesModalFilter extends StatefulWidget {
 }
 
 class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
-
   String _car = '';
   List<String> _smartphone = [];
 
@@ -16,7 +16,7 @@ class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Car',
           placeholder: 'Choose one',
@@ -31,7 +31,8 @@ class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
           choiceConfig: SmartSelectChoiceConfig(isGrouped: true),
           modalConfig: SmartSelectModalConfig(useFilter: true),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/yeVtxxPxzbw/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/yeVtxxPxzbw/100x100'),
           ),
           onChange: (val) => setState(() => _car = val),
         ),
@@ -53,11 +54,12 @@ class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
             useFilter: true,
           ),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
           ),
           onChange: (val) => setState(() => _smartphone = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

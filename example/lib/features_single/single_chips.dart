@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesSingleChips extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Car',
           value: _car,
@@ -30,11 +31,11 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
           modalType: SmartSelectModalType.fullPage,
           modalConfig: SmartSelectModalConfig(
             title: 'Cars Option',
-            // leading: Container(
+            // leading: ContainerResponsive(
             //   padding: EdgeInsets.all(10.0),
             //   child: TextResponsive('To hot reload changes while running, press "r". To hot restart (and rebuild state), press "R"'),
             // ),
-            // trailing: Container(
+            // trailing: ContainerResponsive(
             //   padding: EdgeInsets.all(10.0),
             //   child: TextResponsive('To hot reload changes while running, press "r". To hot restart (and rebuild state), press "R"'),
             // ),
@@ -55,7 +56,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
           options: options.categories,
           modalType: SmartSelectModalType.bottomSheet,
           choiceType: SmartSelectChoiceType.chips,
-          leading: Container(
+          leading: ContainerResponsive(
             width: 40,
             alignment: Alignment.center,
             child: const Icon(Icons.label_outline),
@@ -67,7 +68,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
             title: 'Days',
             value: _day,
             isTwoLine: true,
-            leading: Container(
+            leading: ContainerResponsive(
               width: 40,
               alignment: Alignment.center,
               child: const Icon(Icons.calendar_today),
@@ -76,7 +77,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
             choiceType: SmartSelectChoiceType.chips,
             modalType: SmartSelectModalType.popupDialog,
             onChange: (val) => setState(() => _day = val)),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

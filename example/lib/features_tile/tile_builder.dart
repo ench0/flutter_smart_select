@@ -26,7 +26,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
-          Container(height: 7),
+          ContainerResponsive(height: 7),
           Card(
             elevation: 3,
             margin: EdgeInsets.all(5),
@@ -49,7 +49,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
                     ),
                   ),
                 ),
-                Container(
+                ContainerResponsive(
                   height: 40,
                   child: VerticalDivider(),
                 ),
@@ -100,7 +100,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
               );
             },
           ),
-          Container(height: 7),
+          ContainerResponsive(height: 7),
         ],
       ),
     );
@@ -175,7 +175,7 @@ class ChipsTile<T> extends StatelessWidget {
               ).toList(),
             ),
           )
-        : Container(
+        : ContainerResponsive(
             padding: EdgeInsets.all(25),
             child: Center(
               child: TextResponsive(state.placeholder),

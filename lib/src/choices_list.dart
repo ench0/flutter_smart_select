@@ -2,38 +2,33 @@ import 'package:flutter/material.dart';
 import './model/option.dart';
 import './model/choice_config.dart';
 import './choices_item.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class SmartSelectChoicesList<T> extends StatelessWidget {
-
   final List<SmartSelectOption<T>> items;
   final SmartSelectChoiceType type;
   final SmartSelectChoiceConfig<T> config;
 
-  SmartSelectChoicesList(
-    this.items,
-    this.type,
-    this.config,
-    { Key key }
-  ) : super(key: key);
+  SmartSelectChoicesList(this.items, this.type, this.config, {Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return config.useWrap || type == SmartSelectChoiceType.chips
-      ? _listWrap()
-      : config.useDivider
-        ? _listSeparated()
-        : _listDefault();
+        ? _listWrap()
+        : config.useDivider ? _listSeparated() : _listDefault();
   }
 
   Widget _listWrap() {
     return SingleChildScrollView(
       physics: ScrollPhysics(),
-      child: Container(
+      child: ContainerResponsive(
         width: double.infinity,
-        padding: config.padding ?? EdgeInsets.symmetric(
-          vertical: 10.0,
-          horizontal: 15.0,
-        ),
+        padding: config.padding ??
+            EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 15.0,
+            ),
         child: Wrap(
           spacing: config.spacing ?? 12.0, // gap between adjacent chips
           runSpacing: config.runSpacing ?? 0.0, // gap between lines

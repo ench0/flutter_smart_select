@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesTileTwoLine extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesTileTwoLine extends StatefulWidget {
 }
 
 class _FeaturesTileTwoLineState extends State<FeaturesTileTwoLine> {
-
   String _day = 'fri';
   List<String> _month = ['apr'];
 
@@ -16,7 +16,7 @@ class _FeaturesTileTwoLineState extends State<FeaturesTileTwoLine> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Days',
           value: _day,
@@ -32,7 +32,7 @@ class _FeaturesTileTwoLineState extends State<FeaturesTileTwoLine> {
           onChange: (val) => setState(() => _month = val),
           isTwoLine: true,
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

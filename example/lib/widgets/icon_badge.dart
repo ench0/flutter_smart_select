@@ -15,7 +15,7 @@ class IconBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ContainerResponsive(
       width: 30.0,
       height: 30.0,
       child: Stack(
@@ -24,7 +24,7 @@ class IconBadge extends StatelessWidget {
           Positioned(
             top: 0,
             right: 0,
-            child: Container(
+            child: ContainerResponsive(
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: color,

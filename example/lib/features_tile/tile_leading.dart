@@ -19,7 +19,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Days',
           value: _day,
@@ -66,7 +66,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
                 NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
           ),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

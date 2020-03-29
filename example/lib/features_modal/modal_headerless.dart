@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesModalHeaderless extends StatefulWidget {
   @override
-  _FeaturesModalHeaderlessState createState() => _FeaturesModalHeaderlessState();
+  _FeaturesModalHeaderlessState createState() =>
+      _FeaturesModalHeaderlessState();
 }
 
 class _FeaturesModalHeaderlessState extends State<FeaturesModalHeaderless> {
-
   List<String> _fruit = ['mel'];
   List<String> _hero = ['bat', 'spi'];
 
@@ -16,7 +17,7 @@ class _FeaturesModalHeaderlessState extends State<FeaturesModalHeaderless> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.multiple(
           title: 'Fruit',
           value: _fruit,
@@ -26,7 +27,7 @@ class _FeaturesModalHeaderlessState extends State<FeaturesModalHeaderless> {
           modalConfig: SmartSelectModalConfig(
             useHeader: false,
           ),
-          leading: Container(
+          leading: ContainerResponsive(
             width: 40,
             alignment: Alignment.center,
             child: const Icon(Icons.shopping_cart),
@@ -44,11 +45,12 @@ class _FeaturesModalHeaderlessState extends State<FeaturesModalHeaderless> {
             useHeader: false,
           ),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
           ),
           onChange: (val) => setState(() => _hero = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

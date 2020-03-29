@@ -16,7 +16,7 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.single(
           title: 'Fruit',
           value: _fruit,
@@ -51,7 +51,7 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
           },
           onChange: (val) => setState(() => _framework = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

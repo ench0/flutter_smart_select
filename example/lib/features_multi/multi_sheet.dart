@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_select/smart_select.dart';
 import '../options.dart' as options;
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class FeaturesMultiSheet extends StatefulWidget {
   @override
@@ -8,7 +9,6 @@ class FeaturesMultiSheet extends StatefulWidget {
 }
 
 class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
-
   List<String> _os = ['and', 'tux'];
   List<String> _hero = ['bat', 'spi'];
 
@@ -16,7 +16,7 @@ class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(height: 7),
+        ContainerResponsive(height: 7),
         SmartSelect<String>.multiple(
           title: 'OS',
           value: _os,
@@ -24,7 +24,8 @@ class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
           options: options.os,
           modalType: SmartSelectModalType.bottomSheet,
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/xsGxhtAsfSA/100x100'),
           ),
           onChange: (val) => setState(() => _os = val),
         ),
@@ -36,11 +37,12 @@ class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
           options: options.heroes,
           modalType: SmartSelectModalType.bottomSheet,
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
+            backgroundImage:
+                NetworkImage('https://source.unsplash.com/8I-ht65iRww/100x100'),
           ),
           onChange: (val) => setState(() => _hero = val),
         ),
-        Container(height: 7),
+        ContainerResponsive(height: 7),
       ],
     );
   }

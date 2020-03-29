@@ -11,7 +11,7 @@ class FeaturesHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ContainerResponsive(
       height: 45.0,
       color: Colors.blueGrey[50],
       padding: EdgeInsets.symmetric(horizontal: 16.0),

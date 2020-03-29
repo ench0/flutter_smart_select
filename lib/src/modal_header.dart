@@ -97,7 +97,7 @@ class SmartSelectModalHeader extends StatelessWidget
         filterButton,
         clearButton,
         confirmButton,
-        Container(width: 5.0),
+        ContainerResponsive(width: 5.0),
       ].where((child) => child != null).toList(),
     );
   }

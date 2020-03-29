@@ -23,18 +23,18 @@ class CardTile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: Container(
+      child: ContainerResponsive(
         padding: EdgeInsets.all(10),
         child: Row(
           children: <Widget>[
-            Container(
+            ContainerResponsive(
               width: 80,
               height: 80,
               margin: EdgeInsets.only(right: 10),
               child: thumb,
             ),
             Expanded(
-              child: Container(
+              child: ContainerResponsive(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -45,7 +45,7 @@ class CardTile extends StatelessWidget {
                           .headline1
                           .merge(TextStyle(color: Colors.black54)),
                     ),
-                    Container(height: 5),
+                    ContainerResponsive(height: 5),
                     TextResponsive(
                       value,
                       style: Theme.of(context)
@@ -57,7 +57,7 @@ class CardTile extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
+            ContainerResponsive(
               child: Center(
                 child: IconButton(
                   icon: Icon(Icons.arrow_drop_down_circle),
