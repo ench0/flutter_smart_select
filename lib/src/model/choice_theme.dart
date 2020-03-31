@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 
 /// Configure choices group header style
 class SmartSelectChoiceGroupHeaderStyle {
-
   /// Group header background color
   final Color backgroundColor;
 
@@ -26,7 +25,6 @@ class SmartSelectChoiceGroupHeaderStyle {
 
 /// Configure choices item style
 class SmartSelectChoiceStyle {
-
   /// Checkbox Checked icon color
   final Color checkColor;
 
@@ -76,8 +74,9 @@ class SmartSelectChoiceStyle {
     this.inactiveThumbColor,
     this.inactiveThumbImage,
     this.inactiveTrackColor,
-    this.titleStyle = const TextStyle(color: Color(0xFF616161)),
-    this.subtitleStyle = const TextStyle(color: Color(0xFF616161)),
+    this.titleStyle = const TextStyle(color: Color(0xFF616161), fontSize: 48.0),
+    this.subtitleStyle =
+        const TextStyle(color: Color(0xFF616161), fontSize: 48.0),
     this.activeTitleStyle,
     this.activeSubtitleStyle,
     this.padding,

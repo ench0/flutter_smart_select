@@ -3,7 +3,6 @@ import 'dart:ui';
 
 /// Configure modal style
 class SmartSelectModalStyle {
-
   /// Modal border shape
   /// used in popup dialog and bottom sheet
   final ShapeBorder shape;
@@ -25,7 +24,6 @@ class SmartSelectModalStyle {
 
 /// Configure modal option header style
 class SmartSelectModalHeaderStyle {
-
   /// Header border shape
   final ShapeBorder shape;
 
@@ -56,7 +54,7 @@ class SmartSelectModalHeaderStyle {
     this.shape,
     this.elevation = 0.5,
     this.centerTitle = false,
-    this.textStyle = const TextStyle(color: Color(0x8A000000)),
+    this.textStyle = const TextStyle(color: Color(0x8A000000), fontSize: 48.0),
     this.iconTheme = const IconThemeData(color: Color(0x8A000000)),
     this.actionsIconTheme = const IconThemeData(color: Color(0x8A000000)),
     this.backgroundColor = const Color(0xFFFFFFFF),
