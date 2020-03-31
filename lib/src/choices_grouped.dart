@@ -4,21 +4,17 @@ import './model/choice_config.dart';
 import './model/choice_theme.dart';
 import './model/option.dart';
 import './choices_list.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 class SmartSelectChoicesGrouped<T> extends StatelessWidget {
-
   final List<String> groupKeys;
   final List<SmartSelectOption<T>> items;
   final SmartSelectChoiceType type;
   final SmartSelectChoiceConfig<T> config;
 
-  SmartSelectChoicesGrouped(
-    this.groupKeys,
-    this.items,
-    this.type,
-    this.config,
-    { Key key }
-  ) : super(key: key);
+  SmartSelectChoicesGrouped(this.groupKeys, this.items, this.type, this.config,
+      {Key key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +25,13 @@ class SmartSelectChoicesGrouped<T> extends StatelessWidget {
         List<SmartSelectOption<T>> groupItems = _groupItems(groupKey);
         return StickyHeader(
           content: SmartSelectChoicesList<T>(groupItems, type, config),
-          header: config.groupHeaderBuilder?.call(groupKey, groupItems.length)
-            ?? SmartSelectChoicesGroupedHeader(
-                title: groupKey,
-                counter: groupItems.length,
-                theme: config.groupHeaderStyle,
-              ),
+          header:
+              config.groupHeaderBuilder?.call(groupKey, groupItems.length) ??
+                  SmartSelectChoicesGroupedHeader(
+                    title: groupKey,
+                    counter: groupItems.length,
+                    theme: config.groupHeaderStyle,
+                  ),
         );
       },
     );
@@ -42,12 +39,13 @@ class SmartSelectChoicesGrouped<T> extends StatelessWidget {
 
   /// return a list of group items
   List<SmartSelectOption<T>> _groupItems(String key) {
-    return items.where((SmartSelectOption<T> item) => item.group == key).toList();
+    return items
+        .where((SmartSelectOption<T> item) => item.group == key)
+        .toList();
   }
 }
 
 class SmartSelectChoicesGroupedHeader extends StatelessWidget {
-
   final String title;
   final int counter;
   final SmartSelectChoiceGroupHeaderStyle theme;
@@ -61,7 +59,7 @@ class SmartSelectChoicesGroupedHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ContainerResponsive(
       height: theme.height,
       color: theme.backgroundColor,
       padding: theme.padding,
@@ -69,19 +67,13 @@ class SmartSelectChoicesGroupedHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          TextResponsive(
             title,
-            style: Theme.of(context)
-                .textTheme
-                .body2
-                .merge(theme.textStyle),
+            style: Theme.of(context).textTheme.bodyText2.merge(theme.textStyle),
           ),
-          Text(
+          TextResponsive(
             counter.toString(),
-            style: Theme.of(context)
-                .textTheme
-                .body2
-                .merge(theme.textStyle),
+            style: Theme.of(context).textTheme.bodyText2.merge(theme.textStyle),
           ),
         ],
       ),
